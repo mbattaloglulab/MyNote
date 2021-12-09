@@ -101,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements NoteFragment.OnNo
 
     @Override
     public void onBackPressed() {
+        displayingEditor = !displayingEditor;
+        invalidateOptionsMenu();
         EditNoteFragment editFragment = (EditNoteFragment) getSupportFragmentManager().findFragmentByTag("edit_note");
         if (editFragment != null){
             String content = editFragment.getContent();
